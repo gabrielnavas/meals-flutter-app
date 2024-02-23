@@ -10,11 +10,24 @@ class MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Delicia do Gabs'),
-      ),
+      appBar: _renderAppBar(),
       body: const Center(
         child: Text('Navegar é preciso!!'),
+      ),
+    );
+  }
+
+  AppBar _renderAppBar() {
+    return AppBar(
+      backgroundColor: Colors.blue,
+      title: const Center(
+        child: Text(
+          'Delicia do Gabs',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       ),
     );
   }
