@@ -1,20 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:meals_flutter_app/data/dummy_data.dart';
+import 'package:meals_flutter_app/widgets/category_item.dart';
 
 class CategoriesScreen extends StatelessWidget {
   const CategoriesScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> children = dummyCategories
-        .map(
-          (e) => Container(
-            child: Text(e.title),
-            alignment: Alignment.center,
-            color: e.color,
-          ),
-        )
-        .toList();
+    List<Widget> children =
+        dummyCategories.map((e) => CategoryItem(e)).toList();
     return GridView(
       gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
         maxCrossAxisExtent: 200, // tamanho máximo no cross axis
