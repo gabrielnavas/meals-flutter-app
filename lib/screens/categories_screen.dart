@@ -9,7 +9,8 @@ class CategoriesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     List<Widget> children =
         dummyCategories.map((e) => CategoryItem(e)).toList();
-    return GridView(
+
+    Widget body = GridView(
       gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
         maxCrossAxisExtent: 200, // tamanho máximo no cross axis
         childAspectRatio: 3 / 2, // proporção na largura e altura
@@ -17,6 +18,26 @@ class CategoriesScreen extends StatelessWidget {
         mainAxisSpacing: 20,
       ),
       children: children,
+    );
+
+    return Scaffold(
+      appBar: _renderAppBar(),
+      body: body,
+    );
+  }
+
+  AppBar _renderAppBar() {
+    return AppBar(
+      backgroundColor: Colors.blue,
+      title: const Center(
+        child: Text(
+          'Delicia do Gabs',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
     );
   }
 }

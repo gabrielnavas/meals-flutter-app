@@ -9,9 +9,9 @@ class CategoryItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text(category.title),
       alignment: Alignment.center,
       color: category.color,
+      child: Text(category.title),
     );
   }
 }
