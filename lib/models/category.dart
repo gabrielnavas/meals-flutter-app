@@ -1,9 +1,9 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class Category {
   String id;
   String title;
-  MaterialColor color;
+  Color color;
 
   Category({required this.id, required this.title, required this.color});
 }
