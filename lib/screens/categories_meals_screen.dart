@@ -20,8 +20,9 @@ class CategoriesMealsScreen extends StatelessWidget {
           category.title,
         ),
       ),
-      body: Column(
-        children: meals.map((meal) => Text(meal.title)).toList(),
+      body: ListView.builder(
+        itemCount: meals.length,
+        itemBuilder: (context, index) => Text(meals[index].title),
       ),
     );
   }
