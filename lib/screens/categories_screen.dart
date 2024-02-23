@@ -11,6 +11,7 @@ class CategoriesScreen extends StatelessWidget {
         dummyCategories.map((e) => CategoryItem(e)).toList();
 
     Widget body = GridView(
+      padding: const EdgeInsets.all(25),
       gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
         maxCrossAxisExtent: 200, // tamanho máximo no cross axis
         childAspectRatio: 3 / 2, // proporção na largura e altura
@@ -35,6 +36,7 @@ class CategoriesScreen extends StatelessWidget {
           style: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.bold,
+            fontFamily: 'Raleway',
           ),
         ),
       ),
