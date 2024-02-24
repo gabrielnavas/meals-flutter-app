@@ -8,8 +8,8 @@ class Routes {
   static Map<String, Widget Function(BuildContext context)> getRoutes() {
     return {
       Routenames.home: (_) => const CategoriesScreen(),
-      Routenames.categories: (_) => CategoriesMealsScreen(),
-      Routenames.mealsDetail: (_) => MealDetailScreen()
+      Routenames.categories: (_) => const CategoriesMealsScreen(),
+      Routenames.mealsDetail: (_) => const MealDetailScreen()
     };
   }
 }

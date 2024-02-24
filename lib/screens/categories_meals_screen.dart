@@ -5,6 +5,8 @@ import 'package:meals_flutter_app/models/meal.dart';
 import 'package:meals_flutter_app/widgets/meal_item.dart';
 
 class CategoriesMealsScreen extends StatelessWidget {
+  const CategoriesMealsScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     final Category category =

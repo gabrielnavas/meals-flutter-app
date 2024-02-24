@@ -97,11 +97,11 @@ class MealItem extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Icon(Icons.attach_money),
-                      SizedBox(
+                      const Icon(Icons.attach_money),
+                      const SizedBox(
                         width: 6,
                       ),
-                      Text('${meal.cost.toPtBrString()}'),
+                      Text(meal.cost.toPtBrString()),
                     ],
                   )
                 ],

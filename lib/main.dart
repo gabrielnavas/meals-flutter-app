@@ -15,7 +15,7 @@ class MainApp extends StatelessWidget {
         appBarTheme: const AppBarTheme(
           centerTitle: true,
         ),
-        primarySwatch: Colors.blue,
+        primaryColor: Colors.blue,
         fontFamily: 'Raleway',
         canvasColor: const Color.fromRGBO(255, 254, 229, 1),
         textTheme: ThemeData.light().textTheme.copyWith(
