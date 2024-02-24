@@ -2,18 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:meals_flutter_app/models/complexity.dart';
 import 'package:meals_flutter_app/models/cost.dart';
 import 'package:meals_flutter_app/models/meal.dart';
+import 'package:meals_flutter_app/routes/route_names.dart';
 
 class MealItem extends StatelessWidget {
   final Meal meal;
 
   const MealItem({required this.meal, super.key});
 
-  void _selectMeal() {}
+  void _selectMeal(BuildContext context) {
+    Navigator.of(context).pushNamed(Routenames.mealsDetail, arguments: meal);
+  }
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: _selectMeal,
+      onTap: () => _selectMeal(context),
       child: Card(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15),
