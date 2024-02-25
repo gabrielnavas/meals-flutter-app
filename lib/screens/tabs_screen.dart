@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:meals_flutter_app/models/TabScreen.dart';
+import 'package:meals_flutter_app/models/tab_screen.dart';
 import 'package:meals_flutter_app/screens/categories_screen.dart';
 import 'package:meals_flutter_app/screens/favorite_screen.dart';
+import 'package:meals_flutter_app/widgets/main_drawer.dart';
 
 class TabsScreen extends StatefulWidget {
   const TabsScreen({super.key});
@@ -11,7 +12,7 @@ class TabsScreen extends StatefulWidget {
 }
 
 class _TabsScreenState extends State<TabsScreen> {
-  int _selectedScreenIndex = 1;
+  int _selectedScreenIndex = 0;
   final List<TabScreen> _screens = [
     const TabScreen(
       title: 'Lista de categorias',
@@ -36,8 +37,27 @@ class _TabsScreenState extends State<TabsScreen> {
         backgroundColor: Colors.redAccent,
         title: Text(
           _screens[_selectedScreenIndex].title,
+          style: const TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        leading: Builder(
+          builder: (BuildContext context) {
+            return IconButton(
+              icon: const Icon(
+                Icons.menu_rounded,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+              tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+            );
+          },
         ),
       ),
+      drawer: const MainDrawer(),
       body: _screens[_selectedScreenIndex].screen,
       bottomNavigationBar: BottomNavigationBar(
         unselectedItemColor: Colors.black54,

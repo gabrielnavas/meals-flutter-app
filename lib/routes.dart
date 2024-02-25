@@ -15,4 +15,11 @@ class Routes {
       Routes.mealsDetail: (_) => const MealDetailScreen()
     };
   }
+
+  static MaterialPageRoute getRouteNotFound() {
+    return MaterialPageRoute(
+      // default route if not found
+      builder: (_) => const TabsScreen(),
+    );
+  }
 }
