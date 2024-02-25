@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meals_flutter_app/widgets/main_drawer.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
@@ -9,6 +10,7 @@ class SettingsScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Configurações'),
       ),
+      drawer: MainDrawer(),
       body: const Center(
         child: Text('Configurações do app'),
       ),
