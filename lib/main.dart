@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:meals_flutter_app/routes/routes.dart';
+import 'package:meals_flutter_app/routes.dart';
 import 'package:meals_flutter_app/screens/categories_screen.dart';
 
 void main() => runApp(const MainApp());

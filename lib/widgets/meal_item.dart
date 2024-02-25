@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:meals_flutter_app/models/complexity.dart';
 import 'package:meals_flutter_app/models/cost.dart';
 import 'package:meals_flutter_app/models/meal.dart';
-import 'package:meals_flutter_app/routes/route_names.dart';
+import 'package:meals_flutter_app/routes.dart';
 
 class MealItem extends StatelessWidget {
   final Meal meal;
@@ -10,7 +10,7 @@ class MealItem extends StatelessWidget {
   const MealItem({required this.meal, super.key});
 
   void _selectMeal(BuildContext context) {
-    Navigator.of(context).pushNamed(Routenames.mealsDetail, arguments: meal);
+    Navigator.of(context).pushNamed(Routes.mealsDetail, arguments: meal);
   }
 
   @override
