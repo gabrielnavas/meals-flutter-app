@@ -18,6 +18,7 @@ class MainApp extends StatelessWidget {
         primaryColor: Colors.blue,
         fontFamily: 'Raleway',
         canvasColor: const Color.fromRGBO(255, 254, 229, 1),
+        scaffoldBackgroundColor: Color.fromARGB(255, 255, 242, 226),
         textTheme: ThemeData.light().textTheme.copyWith(
               titleSmall: const TextStyle(
                 fontSize: 15,
