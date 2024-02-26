@@ -18,15 +18,34 @@ class MainApp extends StatefulWidget {
 }
 
 class _MainAppState extends State<MainApp> {
-  List<Meal> _avaliableMeals = dummyMeals;
+  List<Meal> avaliableMeals = dummyMeals;
+  List<Meal> favorite = [];
+
   Settings settings = Settings();
 
   void onSettingsChanged(Settings sett) {
-    _avaliableMeals = Meal.filterMealsBySettings(dummyMeals, sett);
+    avaliableMeals = Meal.filterMealsBySettings(dummyMeals, sett);
+  }
+
+  void _toggleFavorite(Meal meal) {
+    setState(() {
+      if (favorite.contains(meal)) {
+        favorite.remove(meal);
+      } else {
+        favorite.add(meal);
+      }
+    });
+  }
+
+  bool _isFavorite(Meal meal) {
+    return favorite.contains(meal);
   }
 
   @override
   Widget build(BuildContext context) {
+    Widget tabScreen = TabsScreen(
+      favoriteMeals: favorite,
+    );
     return MaterialApp(
       title: 'DeliMealsApp',
       theme: ThemeData(
@@ -47,15 +66,19 @@ class _MainAppState extends State<MainApp> {
       ),
       initialRoute: '/',
       routes: {
-        Routes.home: (_) => const TabsScreen(),
+        Routes.home: (_) => tabScreen,
         Routes.categories: (_) => CategoriesMealsScreen(
-              meals: _avaliableMeals,
+              meals: avaliableMeals,
             ),
-        Routes.mealsDetail: (_) => const MealDetailScreen(),
+        Routes.mealsDetail: (_) => MealDetailScreen(
+            toggleFavorite: _toggleFavorite, mealIsFavorite: _isFavorite),
         Routes.settings: (_) => SettingsScreen(
             settings: settings, onSettingsChanged: onSettingsChanged),
       },
-      onUnknownRoute: (settings) => Routes.getRouteNotFound(),
+      onUnknownRoute: (settings) => MaterialPageRoute(
+        // default route if not found
+        builder: (_) => tabScreen,
+      ),
     );
   }
 }
