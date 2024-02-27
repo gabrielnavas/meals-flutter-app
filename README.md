@@ -1,16 +1,30 @@
-# meals_flutter_app
+# Shop Flutter App
 
-A new Flutter project.
+- A small meal project written in Flutter.
+- Without state manager
+- using dummy data
 
-## Getting Started
+<br>
 
-This project is a starting point for a Flutter application.
+## Screens
 
-A few resources to get you started if this is your first Flutter project:
+### Category Meals
+![Category Meals](docs/screens_pngs/category_meals_.png "Category Meals")
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Settings
+![Category Meals](docs/screens_pngs/drawer.png "Settings")
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Favorites
+![Category Meals](docs/screens_pngs/favorites.png "Favorites")
+
+### Home
+![Category Meals](docs/screens_pngs/home.png "Home")
+
+### Meal Details #1
+![Category Meals](docs/screens_pngs/meal_details.png "Meal Details #1")
+
+### Meal's Steps
+![Category Meals](docs/screens_pngs/meal_details2.png "Meal Details #2")
+
+### Meal After Favorited
+![Category Meals](docs/screens_pngs/meal_favorited.png "Meal After Favorited")
