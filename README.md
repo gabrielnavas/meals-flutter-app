@@ -1,4 +1,4 @@
-# Shop Flutter App
+# Meals Flutter App
 
 - A small meal project written in Flutter.
 - Without state manager
